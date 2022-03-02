@@ -11,3 +11,6 @@
 [submodule "dep/gtsam"]
 	path = dep/gtsam
 	url = https://github.com/borglab/gtsam.git
+[submodule "dep/ceres-solver"]
+	path = dep/ceres-solver
+	url = https://github.com/ceres-solver/ceres-solver.git
