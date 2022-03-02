@@ -1,0 +1,1 @@
+/usr/bin/ld: warning: libconsole_bridge.so.0.4, needed by /opt/ros/noetic/lib/libcpp_common.so, may conflict with libconsole_bridge.so.1.0

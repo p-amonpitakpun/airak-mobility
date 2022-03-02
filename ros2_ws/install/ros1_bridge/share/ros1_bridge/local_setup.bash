@@ -1,0 +1,1 @@
+/home/n21/AIRAK/airak_mobility/ros2_ws/build/ros1_bridge/ament_cmake_environment_hooks/local_setup.bash

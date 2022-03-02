@@ -1,0 +1,16 @@
+[submodule "ros2_ws/src/ros1_bridge"]
+	path = ros2_ws/src/ros1_bridge
+	url = https://github.com/ros2/ros1_bridge.git
+	branch = foxy
+[submodule "ros1_ws/src/ssl_slam2"]
+	path = ros1_ws/src/ssl_slam2
+	url = https://github.com/wh200720041/ssl_slam2.git
+[submodule "ros1_ws/src/realsense-ros"]
+	path = ros1_ws/src/realsense-ros
+	url = https://github.com/IntelRealSense/realsense-ros.git
+[submodule "dep/ceres-solver"]
+	path = dep/ceres-solver
+	url = https://ceres-solver.googlesource.com/ceres-solver
+[submodule "dep/gtsam"]
+	path = dep/gtsam
+	url = https://github.com/borglab/gtsam.git
