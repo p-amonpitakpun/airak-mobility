@@ -14,3 +14,6 @@
 [submodule "dep/ceres-solver"]
 	path = dep/ceres-solver
 	url = https://github.com/ceres-solver/ceres-solver.git
+[submodule "dep/pcl"]
+	path = dep/pcl
+	url = https://github.com/PointCloudLibrary/pcl.git
