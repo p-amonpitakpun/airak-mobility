@@ -1,5 +1,7 @@
 ros*_ws/devel/
 ros*_ws/logs/
+ros*_ws/log/
+ros*_ws/install/
 ros*_ws/build/
 ros*_ws/bin/
 ros*_ws/lib/
