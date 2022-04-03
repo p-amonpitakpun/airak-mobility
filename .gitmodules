@@ -17,3 +17,11 @@
 [submodule "dep/pcl"]
 	path = dep/pcl
 	url = https://github.com/PointCloudLibrary/pcl.git
+[submodule "ros1_ws/src/DynamixelSDK"]
+	path = ros1_ws/src/DynamixelSDK
+	url = https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+	branch = noetic-devel
+[submodule "ros2_ws/src/navigation2"]
+	path = ros2_ws/src/navigation2
+	url = https://github.com/ros-planning/navigation2.git
+	branch = foxy-devel
