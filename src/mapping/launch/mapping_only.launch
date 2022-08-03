@@ -1,0 +1,39 @@
+<launch>
+    <node pkg="nodelet" type="nodelet" name="point_cloud_xyz" args="standalone rtabmap_ros/point_cloud_xyz">
+        <param name="approx_sync" value="false" />
+        <param name="decimation" value="4" />
+        <remap from="/depth/image" to="/camera/depth/image_rect_raw" />
+        <remap from="/depth/camera_info" to="/camera/depth/camera_info" />
+    </node>
+
+    <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
+        <arg name="rtabmap_args" value="\
+        --delete_db_on_start \
+        --Icp/VoxelSize 0.05 \
+        --Icp/PointToPlaneRadius 0 \
+        --Icp/PointToPlaneK 20 \
+        --Icp/CorrespondenceRatio 0.2 \
+        --Icp/PMOutlierRatio 0.65 \
+        --Icp/Epsilon 0.005 \
+        --Icp/PointToPlaneMinComplexity 0 \
+        --Odom/ScanKeyFrameThr 0.7 \
+        --OdomF2M/ScanMaxSize 15000 \
+        --Optimizer/GravitySigma 0.3 \
+        --RGBD/ProximityPathMaxNeighbors 1 \
+        --Reg/Strategy 1" />
+        <arg name="icp_odometry" value="true" />
+        <arg name="scan_cloud_topic" value="/cloud" />
+        <arg name="subscribe_scan_cloud" value="true" />
+        <!-- <arg name="depth_topic" value="/camera/aligned_depth_to_color/image_raw" /> -->
+        <arg name="depth_topic" value="/camera/depth/image_raw" />
+        <!-- <arg name="rgb_topic" value="/camera/color/image_raw" /> -->
+        <arg name="rgb_topic" value="/camera/rgb/image_raw" />
+        <arg name="camera_info_topic" value="/camera/color/camera_info" />
+        <arg name="approx_sync" value="false" />
+        <arg name="wait_imu_to_init" value="true" />
+        <!-- <arg name="imu_topic" value="/rtabmap/imu" /> -->
+        <arg name="imu_topic" value="/imu" />
+        <!-- <arg name="rtabmapviz" value="false" /> -->
+        <!-- <arg name="rviz" value="true" /> -->
+    </include>
+</launch>
