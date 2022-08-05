@@ -1,19 +1,4 @@
 <launch>
-    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
-        <arg name="align_depth" value="true" />
-        <arg name="unite_imu_method" value="linear_interpolation" />
-        <arg name="enable_gyro" value="true" />
-        <arg name="enable_accel" value="true" />
-    </include>
-
-    <node name="imu_filter_madgwick" pkg="imu_filter_madgwick" type="imu_filter_node">
-        <param name="use_mag" value="false" />
-        <param name="publish_tf" value="false" />
-        <param name="world_frame" value="enu" />
-        <remap from="/imu/data_raw" to="/camera/imu" />
-        <remap from="/imu/data" to="/rtabmap/imu" />
-    </node>
-
     <node pkg="nodelet" type="nodelet" name="point_cloud_xyz" args="standalone rtabmap_ros/point_cloud_xyz">
         <param name="approx_sync" value="false"/>
         <param name="decimation" value="4"/>
@@ -36,6 +21,7 @@
         --Optimizer/GravitySigma 0.3 \
         --RGBD/ProximityPathMaxNeighbors 1 \
         --Reg/Strategy 1" />
+        <arg name="frame_id" value="base_link"/>
         <arg name="icp_odometry" value="true" />
         <arg name="subscribe_scan" value="false" />
         <arg name="scan_cloud_topic" value="/cloud" />
