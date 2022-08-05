@@ -1,0 +1,20 @@
+<launch>
+    <arg name="camera_offset_z" value="0.8" />
+
+    <node pkg="tf" type="static_transform_publisher" name="tf_camera2base" ns="tf" args="0 0 $(arg camera_offset_z) 0 0 0 base_link camera_link 100" />
+
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+        <arg name="align_depth" value="true" />
+        <arg name="unite_imu_method" value="linear_interpolation" />
+        <arg name="enable_gyro" value="true" />
+        <arg name="enable_accel" value="true" />
+    </include>
+
+    <node name="imu_filter_madgwick" pkg="imu_filter_madgwick" type="imu_filter_node">
+        <param name="use_mag" value="false" />
+        <param name="publish_tf" value="false" />
+        <param name="world_frame" value="enu" />
+        <remap from="/imu/data_raw" to="/camera/imu" />
+        <remap from="/imu/data" to="/rtabmap/imu" />
+    </node>
+</launch>
