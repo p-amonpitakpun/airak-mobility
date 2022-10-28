@@ -1,0 +1,3 @@
+shutdown_costmaps: false
+allow_unknown: true
+base_global_planner: "global_planner/GlobalPlanner"

@@ -192,6 +192,8 @@ include_directories(
 # )
 install(DIRECTORY
   launch
+  launch/config
+  params
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
