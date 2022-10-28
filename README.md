@@ -25,8 +25,18 @@
   (https://github.com/introlab/rtabmap_ros)
 
   ```bash
-  sudo apt install ros-$ROS_DISTRO-rtabmap-ros
+  sudo apt-get install ros-$ROS_DISTRO-rtabmap-ros
   ```
+
+- move_base
+
+  (http://wiki.ros.org/move_base)
+
+  ```bash
+  sudo apt-get install ros-$ROS_DISTRO-navigation
+  ```
+
+*change $ROS_DISTRO to match you ROS distribution
 
 ### Download and Build
 
